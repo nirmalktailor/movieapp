@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import LoginButton from '../Application/LoginButton';
-import 'whatwg-fetch';
 import axios from 'axios';
 
 class Dashboard extends Component {
@@ -27,16 +25,9 @@ class Dashboard extends Component {
         });
   }
 
-  FetchMore = () => {
-        this.setState({
-            movies : []
-        });
-  }
-
   render() {
     return (
       <div className ="container">
-        <LoginButton />
         <table className="table table-bordered tableStyle">
             <thead>
             <tr>
@@ -59,7 +50,6 @@ class Dashboard extends Component {
                 }
             </tbody>
         </table>
-        <button type="button" className = "btn btn-sm btn-primary" onClick={this.FetchMore}>Get More Movies</button>
         </div>
     );
   }

@@ -1,8 +1,19 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Dashboard from './components/Dashboard/Dashboard';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { BrowserRouter as Router , Route , Link , BrowserHistory } from 'react-router-dom';
+
+
+
+// ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(
+<Router>
+    <div>
+        <Route exact path="/" component={App} history = {BrowserHistory}/>
+        <Route path="/dashboard" component={Dashboard}/>
+    </div>
+</Router>, document.getElementById('root'));
